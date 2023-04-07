@@ -1,12 +1,12 @@
-import React from "react";
-import { Navbar } from "../partials";
 import { Outlet } from "react-router";
+import { Panel } from "../partials";
 
 const Dashboard = () => {
   return (
     <div>
-      <Navbar />
-      <Outlet />
+      <Panel>
+        <Outlet />
+      </Panel>
     </div>
   );
 };
