@@ -1,6 +1,10 @@
 export { default as Root } from "../layout/root";
 export { default as LoginPage } from "./onboarding/login";
+export { default as RegisterPage } from "./onboarding/register";
 export { default as UsernamePage } from "./onboarding/username";
+export { default as PasswordPage } from "./onboarding/password";
+export { default as RecoveryPage } from "./onboarding/recovery";
+export { default as ResetPage } from "./onboarding/reset";
 export { default as DashboardPage } from "./dashboard/dashboard";
 export { default as ProfilePage } from "./dashboard/profile";
 export { default as HomePage } from "./home";

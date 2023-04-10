@@ -21,8 +21,10 @@ body {
 }
 
 .profile-img {
-  height: 120px;
-  width: 120px;
+  height: 135px;
+  width: 135px;
+  border: gray;
+  border-radius: 50%;
 }
 
 .full-btn {
@@ -31,4 +33,10 @@ body {
 
 .full-btn:hover {
   background-color: rebeccapurple;
+}
+
+.custom-input {
+  width: 22rem;
+  max-width: 100%;
+  margin: auto;
 }
