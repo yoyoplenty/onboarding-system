@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 import { FormInput, FullButton } from "../../components";
 import { convertImageToBase64, getAsset } from "../../utils/helper";
 
-const Register = () => {
+const Profile = () => {
+  //we need to handle our file upload ourself
   const [file, setFile] = useState<any>(null);
 
   const schema = Yup.object({
-    email: Yup.string().required(),
-    username: Yup.string().required(),
-    password: Yup.string().required(),
+    email: Yup.string().email(),
+    firstname: Yup.string().min(3).max(50),
+    lastname: Yup.string().min(3).max(50),
+    phone_number: Yup.string().length(11),
+    address: Yup.string(),
   });
 
   /**Formik Needs to support file upload */
@@ -26,13 +29,13 @@ const Register = () => {
       <div className="d-flex align-items-center justify-content-center vh-100">
         <div className="p-lg-5 p-3 card text-center">
           <div>
-            <h2>Register Here</h2>
-            <p>We are Happy to Have you on Board</p>
+            <h2>Profile</h2>
+            <p>You can update the details.</p>
           </div>
 
           <div className="text-secondary px-lg-3 p-2">
             <Formik
-              initialValues={{ username: "", email: "", password: "" }}
+              initialValues={{ firstname: "", lastname: "", phone_number: "", email: "", address: "" }}
               validationSchema={schema}
               onSubmit={async (values) => {
                 values = await Object.assign(values, { profile: file || "" });
@@ -44,21 +47,29 @@ const Register = () => {
                 <form onSubmit={formik.handleSubmit}>
                   <div className="profile flex justify-center py-lg-2 py-1">
                     <label htmlFor="profile">
-                      <img src={file || getAsset("avatar.jpeg")} className="profile-img img-thumbnail" alt="avatar" />
+                      <img src={file || getAsset("profile.png")} className="profile-img img-thumbnail" alt="avatar" />
                     </label>
                     <input type="file" onChange={onUpload} id="profile" name="profile" />
                   </div>
 
-                  <FormInput id="email" />
-                  <FormInput id="username" />
-                  <FormInput id="password" type="password " />
+                  <div className="d-flex gap-2">
+                    <FormInput id="firstname" placeholder="FirstName" />
+                    <FormInput id="lastname" placeholder="LastName" />
+                  </div>
 
-                  <FullButton text="Let's Go" />
+                  <div className="d-flex gap-2">
+                    <FormInput id="phone_number" placeholder="Mobile No." />
+                    <FormInput id="email" placeholder="Email" />
+                  </div>
+
+                  <FormInput id="address" placeholder="Address" />
+                  <FullButton text="Update" />
+
                   <div className="d-flex justify-content-center p-lg-2 mb-lg-3 mb-2">
-                    <p className="nav-link p-lg-1">Already Registered?</p>
+                    <p className="nav-link p-lg-1">Come back later?</p>
 
-                    <Link className="nav-link text-danger p-lg-1" to="/">
-                      Login Now
+                    <Link className="nav-link text-danger p-lg-1" to="/login">
+                      Logout
                     </Link>
                   </div>
                 </form>
@@ -71,4 +82,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Profile;
