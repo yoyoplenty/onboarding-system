@@ -7,10 +7,7 @@ import { postData } from "../../utils/request";
 import { useState } from "react";
 import { setLocalStorage } from "../../utils/services/local-storage";
 
-const defaultState = {
-  loading: false,
-  message: "",
-};
+const defaultState = { loading: false, message: "" };
 
 const Login = () => {
   const navigate = useNavigate();
