@@ -1,11 +1,14 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 import "./App.css";
+import { UserContextProvider } from "./context";
 
 function App() {
   return (
     <main>
-      <RouterProvider router={router} />
+      <UserContextProvider>
+        <RouterProvider router={router} />
+      </UserContextProvider>
     </main>
   );
 }
