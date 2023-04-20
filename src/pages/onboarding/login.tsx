@@ -16,13 +16,14 @@ const Login = () => {
   const handleLogin = async (values) => {
     setState({ ...defaultState, loading: true });
 
-    const loginData = await postData("auth/signin", values);
+    const { data, statusCode, response = {} } = await postData("auth/signin", values);
 
-    if (loginData) {
-      setLocalStorage("user", loginData);
+    if (data && statusCode === 200) {
+      const user = await Object.assign(data.user, { accessToken: data.accessToken });
+      setLocalStorage("user", user);
 
       navigate("/dashboard");
-    } else setState({ ...defaultState, message: "An error occured, while trying to login" });
+    } else setState({ loading: false, message: response.data.message });
   };
 
   const schema = Yup.object({

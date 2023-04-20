@@ -1,7 +1,16 @@
 import { Navbar } from "../partials";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getCurrentUser } from "../utils/services/auth";
+import { useEffect } from "react";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const user = getCurrentUser();
+
+  useEffect(() => {
+    if (user) navigate("/dashboard");
+  }, []);
+
   return (
     <div>
       <Navbar />

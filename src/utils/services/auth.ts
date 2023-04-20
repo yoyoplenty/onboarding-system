@@ -9,3 +9,7 @@ export const authHeader = () => {
     return {};
   }
 };
+
+export const getCurrentUser = () => {
+  return getLocalStorage("user");
+};

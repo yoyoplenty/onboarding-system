@@ -29,6 +29,6 @@ export const postData = async (url: string, payload: any): Promise<any> => {
 
     return data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
