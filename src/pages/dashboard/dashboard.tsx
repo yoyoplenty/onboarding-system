@@ -1,7 +1,8 @@
-import { getCurrentUser } from "../../utils/services/auth";
+import { appStore } from "../../store";
 
 const Dashboard = () => {
-  const user = getCurrentUser();
+  const store = appStore();
+  const user = store.authUser;
 
   return (
     <div className="ms-5 ps-5 fw-bold">

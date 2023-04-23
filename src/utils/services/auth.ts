@@ -11,5 +11,8 @@ export const authHeader = () => {
 };
 
 export const getCurrentUser = () => {
-  return getLocalStorage("user");
+  const user = getLocalStorage("user");
+
+  if (user) return user;
+  else return {};
 };

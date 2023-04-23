@@ -4,10 +4,11 @@ interface IProps {
   id: string;
   type?: string;
   label?: string;
+  InputStyle?: string;
   placeholder?: string;
 }
 
-const FormInputs = ({ id, label, type = "text", placeholder }: IProps) => {
+const FormInputs = ({ id, label, type = "text", placeholder, InputStyle = "py-3" }: IProps) => {
   const context = useFormikContext<IProps>();
   const error: string = context.errors[id];
 
@@ -19,7 +20,7 @@ const FormInputs = ({ id, label, type = "text", placeholder }: IProps) => {
       <input
         id={id}
         type={type}
-        className="py-3 border border-white rounded-3 fw-bold text-muted form-control"
+        className={`${InputStyle} border border-white rounded-3 fw-bold text-muted form-control`}
         placeholder={placeholder ? placeholder : id}
         value={context.values[id]}
         onBlur={context.handleBlur}

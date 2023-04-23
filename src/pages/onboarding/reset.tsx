@@ -1,8 +1,18 @@
 import * as Yup from "yup";
 import { Formik } from "formik";
+import { useNavigate, useParams } from "react-router";
 import { FullButton, PasswordInput } from "../../components";
+import { appStore } from "../../store";
 
 const Reset = () => {
+  const store = appStore();
+  const navigate = useNavigate();
+  const { reset_token } = useParams();
+
+  console.log(reset_token);
+
+  const handleResetPassword = () => {};
+
   const schema = Yup.object({
     NewPassword: Yup.string()
       .required("No password provided.")
