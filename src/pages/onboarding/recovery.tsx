@@ -1,13 +1,13 @@
 import { BasicInput, FullButton } from "../../components";
 
-const Recovery = () => {
+const ConfirmEmail = () => {
   return (
     <div className="container-fluid m-0 bg-img">
       <div className="d-flex align-items-center justify-content-center vh-100">
         <div className="p-lg-5 p-4 card text-center">
           <div>
-            <h2>Recovery</h2>
-            <p>Enter OTP to recover Password</p>
+            <h2>ConfirmEmail</h2>
+            <p></p>
           </div>
 
           <div className="px-lg-4">
@@ -28,4 +28,4 @@ const Recovery = () => {
   );
 };
 
-export default Recovery;
+export default ConfirmEmail;
