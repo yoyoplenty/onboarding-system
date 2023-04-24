@@ -18,7 +18,7 @@ export const getData = async (url: string, headers?: string) => {
 
     return data;
   } catch (error) {
-    return Promise.reject(error);
+    return error;
   }
 };
 
@@ -27,6 +27,18 @@ export const postData = async (url: string, payload: any, headers?: string): Pro
 
   try {
     const { data } = await axios.post(`${baseUrl}${url}`, postPayload, config());
+
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const patchData = async (url: string, payload: any, headers?: string): Promise<any> => {
+  const postPayload = JSON.stringify(payload);
+
+  try {
+    const { data } = await axios.patch(`${baseUrl}${url}`, postPayload, config());
 
     return data;
   } catch (error) {

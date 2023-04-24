@@ -3,9 +3,10 @@ import { useFormikContext } from "formik";
 interface IProps {
   id: string;
   label?: string;
+  placeholder?: string;
 }
 
-const PasswordInputs = ({ id, label }: IProps) => {
+const PasswordInputs = ({ id, label, placeholder }: IProps) => {
   const context = useFormikContext<IProps>();
   const error: string = context.errors[id];
 
@@ -18,7 +19,7 @@ const PasswordInputs = ({ id, label }: IProps) => {
         id={id}
         type="password"
         className="custom-input py-3 border border-white rounded-3 fw-bold text-muted form-control"
-        placeholder={id}
+        placeholder={placeholder ? placeholder : id}
         value={context.values[id]}
         onBlur={context.handleBlur}
         onChange={context.handleChange}

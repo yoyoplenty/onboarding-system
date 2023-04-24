@@ -1,27 +1,30 @@
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import { AlertMessage, FormInput, FullButton } from "../../components";
+import { FormInput, FullButton } from "../../components";
 import { convertImageToBase64, getAsset } from "../../utils/helper";
 import { postData } from "../../utils/request";
-
-const defaultState = { loading: false, message: "" };
+import { appStore } from "../../store";
 
 const Register = () => {
+  const store = appStore();
   const navigate = useNavigate();
-  const [state, setState] = useState(defaultState);
 
   const [file, setFile] = useState<any>(null);
 
   const handleRegister = async (values) => {
-    setState({ ...defaultState, loading: true });
-
+    store.setLoading(true);
     const { data, statusCode, response = {} } = await postData("auth/signup", values);
 
+    store.setLoading(false);
+
     if (data && statusCode === 201) {
+      toast.success("A verification email has been sent to the email address provided");
+
       navigate("/login");
-    } else setState({ loading: false, message: response.data.message });
+    } else toast.error(response.data.message, { duration: 3000 });
   };
 
   const schema = Yup.object({
@@ -43,8 +46,6 @@ const Register = () => {
     <div className="container-fluid m-0 bg-img">
       <div className="d-flex align-items-center justify-content-center vh-100">
         <div className="p-3 px-5 card text-center">
-          {state.message && <AlertMessage text={state.message} />}
-
           <div className="mt-1">
             <h2>Register Here</h2>
             <p>We are Happy to Have you on Board</p>
@@ -78,7 +79,7 @@ const Register = () => {
 
                   <FormInput id="password" type="password" InputStyle="py-2" />
 
-                  <FullButton text="Sign Up" InputStyle="py-2" isSubmitting={state.loading} />
+                  <FullButton text="Sign Up" InputStyle="py-2" isSubmitting={store.loading} />
 
                   <div className="d-flex justify-content-center p-lg-2 mb-1">
                     <p className="nav-link p-lg-1">Already Registered?</p>
