@@ -7,6 +7,7 @@ import { appStore } from "../../store";
 import { getAsset } from "../../utils/helper";
 import { postData } from "../../utils/request";
 import { setLocalStorage } from "../../utils/services/local-storage";
+import { getCurrentUser } from "../../utils/services/auth";
 
 const Login = () => {
   const store = appStore();
@@ -20,8 +21,11 @@ const Login = () => {
 
     if (data && statusCode === 200) {
       const user = await Object.assign(data.user, { accessToken: data.accessToken });
-      setLocalStorage("user", user);
 
+      setLocalStorage("user", user);
+      store.setAuthUser(getCurrentUser());
+
+      toast.success("Signin successful");
       navigate("/dashboard");
     } else toast.error(response.data.message);
   };

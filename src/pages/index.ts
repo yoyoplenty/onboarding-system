@@ -1,10 +1,10 @@
 export { default as Root } from "../layout/root";
-export { default as RegisterPage } from "./onboarding/register";
-export { default as LoginPage } from "./onboarding/login";
-export { default as ForgotPage } from "./onboarding/forgot";
-export { default as ConfirmEmailPage } from "./onboarding/confirm-email";
-export { default as ProfilePage } from "./onboarding/profile";
-export { default as ResetPage } from "./onboarding/reset";
+export { default as RegisterPage } from "./auth/register";
+export { default as LoginPage } from "./auth/login";
+export { default as ForgotPage } from "./auth/forgot";
+export { default as ConfirmEmailPage } from "./auth/confirm-email";
+export { default as ProfilePage } from "./auth/profile";
+export { default as ResetPage } from "./auth/reset";
 export { default as DashboardPage } from "./dashboard/dashboard";
 export { default as UserProfilePage } from "./dashboard/user-profile";
 export { default as HomePage } from "./home";

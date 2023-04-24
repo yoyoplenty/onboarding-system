@@ -12,11 +12,16 @@ import {
   UserProfilePage,
 } from "../pages";
 import { DashboardLayout, RootLayout } from "../layout";
+import AuthorizeUser from "../utils/middleware/auth";
 
 const routes = createBrowserRouter([
   {
     path: "/dashboard",
-    element: <DashboardLayout />,
+    element: (
+      <AuthorizeUser>
+        <DashboardLayout />
+      </AuthorizeUser>
+    ),
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <DashboardPage /> },
