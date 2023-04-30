@@ -1,10 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
 
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.logo-text {
+  font-family: "Righteous", cursive !important;
 }
 
 .bg-img {
@@ -25,6 +29,10 @@ body {
   width: 115px;
   border: gray;
   border-radius: 50%;
+}
+
+.purple {
+  color: #6610f2;
 }
 
 .full-btn {

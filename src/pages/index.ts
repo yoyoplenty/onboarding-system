@@ -7,5 +7,5 @@ export { default as ProfilePage } from "./auth/profile";
 export { default as ResetPage } from "./auth/reset";
 export { default as DashboardPage } from "./dashboard/dashboard";
 export { default as UserProfilePage } from "./dashboard/user-profile";
-export { default as HomePage } from "./home";
+export { default as HomePage } from "./home/home";
 export { default as ErrorPage } from "./error";

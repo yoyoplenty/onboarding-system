@@ -1,7 +1,7 @@
-import { Navbar } from "../partials";
+import { Navbar } from "../../partials";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { appStore } from "../store";
+import { appStore } from "../../store";
 
 const Home = () => {
   const store = appStore();
