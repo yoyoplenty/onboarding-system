@@ -1,5 +1,5 @@
-import { Navbar } from "../../partials";
-import { Link, useNavigate } from "react-router-dom";
+import { Hero, Navbar } from "../../shared";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { appStore } from "../../store";
 
@@ -11,13 +11,12 @@ const Home = () => {
 
   useEffect(() => {
     if (user) navigate("/dashboard");
-  }, []);
+  }, [navigate, user]);
 
   return (
     <div>
       <Navbar />
-      This is Basically the Home Page
-      <Link to={"login"}>Login Here</Link>
+      <Hero />
     </div>
   );
 };

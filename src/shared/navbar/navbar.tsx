@@ -7,7 +7,7 @@ const Navbar = () => {
   const user = null;
 
   return (
-    <nav className="navbar navbar-expand-lg p-3 bg-danger">
+    <nav className="navbar navbar-expand-lg p-3">
       <div className="container">
         <Link className="navbar-brand fw- logo-text" to={"/"}>
           <FontAwesomeIcon icon={faPlaceOfWorship} className="icon-logo purple pe-2" />
@@ -60,10 +60,10 @@ const Navbar = () => {
               </li>
             ) : (
               <li className="auth-link-item">
-                <a className="nav-link nav-font ps-lg-2 p-0" href="/">
+                <Link className="nav-link nav-font ps-lg-2 p-0" to={"/login"}>
                   Login
                   <FontAwesomeIcon icon={faCircleUser} className="icon-logo ps-3" />
-                </a>
+                </Link>
               </li>
             )}
           </ul>

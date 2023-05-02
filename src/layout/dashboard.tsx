@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import { Panel } from "../partials";
+import { Panel } from "../shared";
 
 const Dashboard = () => {
   return (
