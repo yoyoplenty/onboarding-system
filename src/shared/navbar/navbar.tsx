@@ -24,43 +24,43 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse drop-nav" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link nav-font pe-lg-2" aria-current="page" href="/">
+            <li className="nav-item text-center">
+              <a className="nav-link nav-font pe-lg-4" aria-current="page" href="/">
                 Home
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item text-center">
               <a className="nav-link nav-font px-lg-4" href="/">
                 Features
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item text-center">
               <a className="nav-link nav-font px-lg-4" href="/">
                 Reviews
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item text-center">
               <a className="nav-link nav-font px-lg-4" href="/">
                 Contact us
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item text-center">
               <a className="nav-link nav-font px-lg-4" href="/">
                 Dashboard
               </a>
             </li>
 
             {user && user.email ? (
-              <li className="nav-item">
+              <li className="nav-item text-center">
                 <a className="nav-link nav-font ps-lg-2" href="/">
                   Logout
                 </a>
               </li>
             ) : (
-              <li className="auth-link-item">
-                <Link className="nav-link nav-font ps-lg-2 p-0" to={"/login"}>
+              <li className="nav-item text-center">
+                <Link className="nav-link nav-font ps-lg-2 center" to={"/login"}>
                   Login
                   <FontAwesomeIcon icon={faCircleUser} className="icon-logo ps-3" />
                 </Link>

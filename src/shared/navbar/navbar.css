@@ -8,6 +8,23 @@
   color: black;
 }
 
-.auth-link-item {
-  padding-top: 5.5px;
+.nav-font:hover {
+  color: #6610f2;
+}
+
+@media screen and (max-width: 768px) {
+  .drop-nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 72.41px;
+    background-color: #fff;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .center {
+    display: flex;
+    align-items: center;
+  }
 }
