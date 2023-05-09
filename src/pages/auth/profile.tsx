@@ -39,8 +39,6 @@ const Profile = () => {
               validationSchema={schema}
               onSubmit={async (values) => {
                 values = await Object.assign(values, { profile: file || "" });
-
-                console.log(values);
               }}
             >
               {(formik) => (

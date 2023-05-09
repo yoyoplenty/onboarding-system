@@ -11,7 +11,7 @@ const Hero = () => {
             <p className="fs-5 fw-semibold">Use flexible, innovative, and easy-to-use technology to power your school or district operations.</p>
 
             <div className="p-2">
-              <button className="btn btn-lg fw-bold px-3 px-lg-5" style={{ backgroundColor: "#6610f2" }}>
+              <button className="btn btn-lg bg-purple fw-bold px-3 px-lg-5">
                 <Link className="nav-link text-light" to={"/register"}>
                   Enroll
                 </Link>

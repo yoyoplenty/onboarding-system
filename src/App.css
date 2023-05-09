@@ -17,6 +17,15 @@
   background-image: url("assets/Background.png");
 }
 
+.bg-purple {
+  background-color: #6610f2;
+  cursor: pointer;
+}
+
+.bg-purple:hover {
+  background-color: rebeccapurple;
+}
+
 .card {
   background: rgba(255, 255, 255, 0.55);
   border-radius: 16px;
@@ -35,14 +44,6 @@
 
 .purple {
   color: #6610f2;
-}
-
-.full-btn {
-  cursor: pointer;
-}
-
-.full-btn:hover {
-  background-color: rebeccapurple;
 }
 
 .custom-input {

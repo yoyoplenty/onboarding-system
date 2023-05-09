@@ -1,4 +1,4 @@
-import { Hero, Navbar } from "../../shared";
+import { About, Hero, Navbar } from "../../shared";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { appStore } from "../../store";
@@ -17,6 +17,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
+      <About />
     </div>
   );
 };
