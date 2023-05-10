@@ -13,12 +13,12 @@ const About = () => {
         <div className="col-md-6 p-lg-5 py-3">
           <h3 className="fw-bold text-secondary">ABOUT US</h3>
           <h1 className="about-header">
-            HOW WE CAN HELP YOUR <span className="purple">BUSINESS</span> GOAL
+            HOW WE CAN HELP YOUR <span className="purple">SCHOOL</span> GOAL
           </h1>
 
           <p className="about-text">
-            Choosing a suitable theme for your business isn’t hard if you know what to look for. A solid bundled contact form plugin enables customers
-            to make contact with you, and a means of displaying your business and location information prominently is also essential.
+            Choosing a suitable management system for your school isn’t hard if you know what to look for. A solid bundled contact form plugin enables
+            customers to make contact with you, and a means of displaying your business and location information prominently is also essential.
           </p>
 
           <button className="btn bg-purple fw-bold px-4 p-3 rounded-pill">
