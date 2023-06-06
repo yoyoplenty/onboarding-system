@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faPlaceOfWorship } from "@fortawesome/free-solid-svg-icons";
@@ -5,9 +6,17 @@ import "./navbar.css";
 
 const Navbar = () => {
   const user = null;
+  const [isSticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) setSticky(true);
+      else setSticky(false);
+    });
+  }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg p-3">
+    <nav className={`navbar navbar-expand-lg p-3 ${isSticky ? "nav-fixed" : "nav-default"}`}>
       <div className="container">
         <Link className="navbar-brand fw- logo-text" to={"/"}>
           <FontAwesomeIcon icon={faPlaceOfWorship} className="icon-logo purple pe-2" />

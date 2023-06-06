@@ -1,6 +1,6 @@
-import { About, Hero, Navbar, Reason } from "../../shared";
-import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { About, Hero, Navbar, Reason, Service } from "../../shared";
 import { appStore } from "../../store";
 
 const Home = () => {
@@ -19,6 +19,7 @@ const Home = () => {
       <Hero />
       <Reason />
       <About />
+      <Service />
     </div>
   );
 };
